@@ -1,0 +1,36 @@
+{
+    "image_width": 1280,
+    "image_height": 720,
+    "objects": [
+        {
+            "class": "clock",
+            "confidence": 0.886,
+            "bbox": {
+                "x1": 816,
+                "y1": 226,
+                "x2": 860,
+                "y2": 271
+            }
+        },
+        {
+            "class": "tv",
+            "confidence": 0.32,
+            "bbox": {
+                "x1": 766,
+                "y1": 283,
+                "x2": 798,
+                "y2": 417
+            }
+        },
+        {
+            "class": "chair",
+            "confidence": 0.3,
+            "bbox": {
+                "x1": 1050,
+                "y1": 635,
+                "x2": 1278,
+                "y2": 717
+            }
+        }
+    ]
+}

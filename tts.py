@@ -1,0 +1,37 @@
+import subprocess
+
+
+PIPER_PYTHON = ".piper_venv/bin/python"
+PIPER_MODEL = "src/models/Piper/ko_KR-kss-medium.onnx"
+OUTPUT_FILE = "src/audio/response.wav"
+SPEAKER_DEVICE = "plughw:3,0"
+
+def tts(text):
+    subprocess.run(
+        [
+            PIPER_PYTHON,
+            "-m",
+            "piper",
+
+            "-m",
+            PIPER_MODEL,
+
+            "-f",
+            OUTPUT_FILE,
+
+            "--",
+            text,
+        ],
+        check=True,
+    )
+
+    subprocess.run(
+        [
+            "aplay",
+            "-D",
+            SPEAKER_DEVICE,
+            OUTPUT_FILE,
+        ],
+        check=True,
+    )
+    
